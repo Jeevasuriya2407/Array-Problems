@@ -1,0 +1,42 @@
+import java.util.*;
+
+class Array{
+    
+    static int[] Even(int[] nums)
+    {
+        int size=nums.length;
+        int evencount=0;
+        for(int i=0;i<size;i++)
+        {
+            if(nums[i]%2==0)
+            {
+                evencount++;
+            }
+        }
+        
+        int[] result=new int[evencount];
+        int index=0;
+        for(int i=0;i<size;i++)
+        {
+            if(nums[i]%2==0)
+            {
+                result[index]=nums[i];
+                index++;
+            }
+        }
+        return result;
+    }
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("enter the size of the array: ");
+        int size=sc.nextInt();
+        int[] nums=new int[size];
+        System.out.println("enter the array elements: ");
+        for(int i=0;i<size;i++)
+        {
+            nums[i]=sc.nextInt();
+        }
+        System.out.println(Arrays.toString(Even(nums)));
+    }
+}
