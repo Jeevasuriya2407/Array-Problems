@@ -1,0 +1,47 @@
+import java.util.*;
+
+class Student{
+    String name;
+    int age;
+    
+    public void setDetails(String Studentname,int Studentage)
+    {
+        name=Studentname;
+        age=Studentage;
+    }
+    
+    public void display()
+    {
+        System.out.println("The student name is "+name+"The student age is "+age);
+    }
+}
+
+class Main{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("enter the number of students: ");
+        int people=sc.nextInt();
+        sc.nextLine();
+        Student[] stud=new Student[people];
+        
+        for(int i=0;i<people;i++)
+        {
+            stud[i] =new Student();
+            System.out.print("enter the name of the student: ");
+            String name=sc.nextLine();
+            System.out.println(" ");
+            System.out.print("enter the age of the student: ");
+            int age=sc.nextInt();
+            sc.nextLine();
+            
+            stud[i].setDetails(name,age);
+        }
+        
+        for(int i=0;i<people;i++)
+        {
+          stud[i].display();  
+        }
+        
+    }
+}
