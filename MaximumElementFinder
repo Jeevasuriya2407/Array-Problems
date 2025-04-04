@@ -1,0 +1,30 @@
+import java.util.*;
+
+class MaximumElementFinder{
+    
+    public static int Maximum(int[] nums )
+    {
+        int max=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]>max)
+            {
+                max=nums[i];
+            }
+        }
+        return max;
+    }
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("enter the size of an array: ");
+        int size=sc.nextInt();
+        int[] nums=new int[size];
+        System.out.println("enter the array elements: ");
+        for(int i=0;i<size;i++)
+        {
+            nums[i]=sc.nextInt();
+        }
+        System.out.println("the largest element of an array is "+Maximum(nums));
+    }
+}
